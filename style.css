@@ -25,12 +25,11 @@ main {
 }
 
 nav {
-    min-height: 90px;
-    padding: 20px 40px;
+    height: 90px;
+    padding: 20px 45px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
     border: 1px solid #eee3d8;
     border-radius: 25px;
 }
@@ -38,7 +37,6 @@ nav {
 .logo {
     font-size: 27px;
     font-weight: 700;
-    white-space: nowrap;
 }
 
 .logo span,
@@ -49,7 +47,7 @@ footer span {
 .links {
     display: flex;
     align-items: center;
-    gap: clamp(15px, 4vw, 55px);
+    gap: 55px;
 }
 
 .links a {
@@ -65,32 +63,29 @@ footer span {
 
 .icons {
     display: flex;
-    gap: 22px;
     align-items: center;
+    gap: 25px;
 }
 
 .icons button {
+    border: none;
     background: transparent;
-    border: 0;
     font-size: 22px;
     cursor: pointer;
 }
 
 .product {
-    display: grid;
-    grid-template-columns: minmax(0, .95fr) minmax(0, 2.1fr) minmax(0, .9fr);
-    align-items: center;
-    gap: 25px;
+    min-height: 760px;
     padding: 30px 45px 20px;
-}
-
-.left,
-.center,
-.right {
-    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
 }
 
 .left {
+    width: 22%;
+    flex-shrink: 0;
     padding: 5px;
 }
 
@@ -101,9 +96,10 @@ footer span {
 }
 
 .big {
-    font-size: clamp(30px, 3.3vw, 49px);
+    font-size: 49px;
     line-height: 1.08;
     letter-spacing: -1.5px;
+    font-weight: 700;
 }
 
 .big span {
@@ -199,28 +195,32 @@ footer span {
 }
 
 .center {
+    width: 53%;
     height: 650px;
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 0;
+    flex-shrink: 0;
 }
 
 .center > img {
     width: 100%;
-    height: calc(100% - 45px);
+    height: 100%;
     object-fit: contain;
     object-position: center;
     mix-blend-mode: multiply;
 }
 
 .highlights {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: clamp(8px, 2vw, 25px);
+    gap: 25px;
     white-space: nowrap;
 }
 
@@ -235,7 +235,8 @@ footer span {
 }
 
 .right {
-    width: 100%;
+    width: 22%;
+    flex-shrink: 0;
     padding: 10px 0;
     display: flex;
     flex-direction: column;
@@ -250,15 +251,14 @@ footer span {
 .sizes {
     display: flex;
     justify-content: center;
-    gap: 9px;
+    gap: 10px;
     padding: 17px 0;
 }
 
 .sizes button {
-    flex: 1;
-    min-width: 0;
-    max-width: 50px;
+    width: 45px;
     height: 45px;
+    flex-shrink: 0;
     border: 1px solid #eee6de;
     border-radius: 13px;
     background: #f1ece6;
@@ -297,14 +297,15 @@ footer span {
 }
 
 .colors {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 18px 14px;
 }
 
 .color-card {
-    min-width: 0;
-    border: 0;
+    width: calc(50% - 7px);
+    border: none;
     background: transparent;
     cursor: pointer;
     text-align: center;
@@ -319,7 +320,6 @@ footer span {
     border: 1px solid transparent;
     border-radius: 15px;
     background: #eee7df;
-    transition: border-color .2s, transform .2s;
 }
 
 .color-card.active img,
@@ -327,11 +327,7 @@ footer span {
     border-color: #ed5b00;
 }
 
-.color-card:hover img {
-    transform: translateY(-2px);
-}
-
-.color-card > span {
+.color-card span {
     display: block;
     margin-top: 8px;
     font-size: 11px;
@@ -341,7 +337,7 @@ footer span {
 .wishlist,
 .bag {
     width: 100%;
-    min-height: 45px;
+    height: 45px;
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -377,18 +373,12 @@ footer span {
     font-size: 20px;
 }
 
-.notice {
-    font-size: 11px;
-    color: #5d5146;
-    line-height: 1.5;
-    margin-top: 8px;
-}
-
 .features {
     margin: 0 30px 12px;
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 20px;
     border: 1px solid #e8dfd5;
     border-radius: 22px;
@@ -396,19 +386,24 @@ footer span {
 }
 
 .feature {
+    width: 25%;
     min-width: 0;
-    display: grid;
-    grid-template-columns: minmax(65px, .9fr) minmax(0, 1fr);
+    display: flex;
     align-items: center;
     gap: 15px;
 }
 
 .feature img {
-    width: 100%;
+    width: 48%;
     height: 150px;
+    flex-shrink: 0;
     object-fit: cover;
     object-position: center;
     border-radius: 15px;
+}
+
+.feature div {
+    min-width: 0;
 }
 
 .feature h3 {
@@ -426,14 +421,16 @@ footer span {
 .benefits {
     margin: 0 30px 8px;
     padding: 22px;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 15px;
     border: 1px solid #e8dfd5;
     border-radius: 22px;
 }
 
 .benefits article {
+    width: 25%;
     display: flex;
     align-items: center;
     gap: 13px;
@@ -442,7 +439,7 @@ footer span {
 }
 
 .benefits article:last-child {
-    border-right: 0;
+    border-right: none;
 }
 
 .benefits article > span {
@@ -465,21 +462,6 @@ footer span {
     line-height: 1.6;
 }
 
-.extra {
-    padding: 35px 20px;
-    text-align: center;
-}
-
-.extra h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.extra p {
-    color: #625b53;
-    font-size: 13px;
-}
-
 footer {
     padding: 25px;
     border-top: 1px solid #e8dfd5;
@@ -493,203 +475,4 @@ footer h2 {
 footer p {
     font-size: 11px;
     color: #625b53;
-}
-
-@media (min-width: 1500px) {
-    .product {
-        padding-left: 55px;
-        padding-right: 55px;
-        gap: 35px;
-    }
-
-    .center {
-        height: 740px;
-    }
-
-    .color-card img {
-        height: 120px;
-    }
-
-    .feature img {
-        height: 165px;
-    }
-}
-
-@media (max-width: 1100px) {
-    nav {
-        padding: 20px 25px;
-    }
-
-    .links {
-        gap: 18px;
-    }
-
-    .product {
-        grid-template-columns: minmax(0, .9fr) minmax(0, 1.5fr) minmax(0, .9fr);
-        gap: 15px;
-        padding: 25px;
-    }
-
-    .center {
-        height: 500px;
-    }
-
-    .highlights small {
-        font-size: 7px;
-    }
-
-    .features {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .feature img {
-        height: 125px;
-    }
-
-    .benefits {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .benefits article:nth-child(2) {
-        border-right: 0;
-    }
-}
-
-@media (max-width: 760px) {
-    nav {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .links {
-        order: 3;
-        width: 100%;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    .product {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
-        padding: 25px 20px;
-    }
-
-    .center {
-        height: 430px;
-    }
-
-    .right {
-        grid-column: 1 / -1;
-        max-width: 430px;
-        justify-self: center;
-        margin: 0 auto;
-    }
-
-    .color-card img {
-        height: 120px;
-    }
-
-    .features,
-    .benefits {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-}
-
-@media (max-width: 520px) {
-    main {
-        width: calc(100% - 12px);
-        margin: 6px;
-        border-radius: 18px;
-    }
-
-    nav {
-        padding: 17px;
-        border-radius: 18px;
-    }
-
-    .logo {
-        font-size: 23px;
-    }
-
-    .icons {
-        gap: 12px;
-    }
-
-    .links {
-        justify-content: flex-start;
-        gap: 14px;
-    }
-
-    .links a {
-        font-size: 10px;
-    }
-
-    .product {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 22px;
-        padding: 24px 18px;
-    }
-
-    .left {
-        order: 0;
-    }
-
-    .center {
-        order: 1;
-        width: 100%;
-        height: 370px;
-    }
-
-    .right {
-        order: 2;
-        width: 100%;
-        max-width: none;
-    }
-
-    .big {
-        font-size: 40px;
-    }
-
-    .price {
-        font-size: 27px;
-    }
-
-    .highlights {
-        gap: 12px;
-    }
-
-    .highlights small {
-        font-size: 8px;
-    }
-
-    .features {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 15px;
-        gap: 18px;
-    }
-
-    .feature {
-        grid-template-columns: 110px minmax(0, 1fr);
-    }
-
-    .feature img {
-        height: 115px;
-    }
-
-    .benefits {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 18px;
-    }
-
-    .benefits article {
-        padding: 10px 0;
-        border-right: 0;
-        border-bottom: 1px solid #e8dfd5;
-    }
-
-    .benefits article:last-child {
-        border-bottom: 0;
-    }
 }
